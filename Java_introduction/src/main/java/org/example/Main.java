@@ -4,25 +4,21 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(getGrade(5));
-        System.out.println(getGrade(1));
-        System.out.println(getGrade(-3));
+        System.out.println(isPrime(0));
+        System.out.println(isPrime(8));
+        System.out.println(isPrime(7));
     }
 
-    public static String getGrade(int A) {
-        switch (A) {
-            case 1:
-                return "Погано";
-            case 2:
-                return "Не дуже добре";
-            case 3:
-                return "Посередньо";
-            case 4:
-                return "Не погано";
-            case 5:
-                return "Відмінно";
-            default:
-                return "Неправильна оцінка";
+    public static boolean isPrime(int A) {
+        int check = 0;
+        if (A <= 1){
+            return false;
         }
+        for (int i = 2; i <= Math.sqrt(A); i++){
+            if(A % i == 0){
+                return false;
+            }
+        }
+        return true;
     }
 }
