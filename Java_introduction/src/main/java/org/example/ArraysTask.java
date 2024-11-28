@@ -4,9 +4,10 @@ import java.util.Arrays;
 
 public class ArraysTask {
     public static void main(String[] args) {
-        MiddleValue();
-        Sorting();
-        ReverseArray();
+//        MiddleValue();
+//        Sorting();
+//        ReverseArray();
+        CheckValue(3);
     }
     public static void MiddleValue() {
         int[] num = {2, 4, 5, 4, 5};
@@ -28,4 +29,19 @@ public class ArraysTask {
             System.out.print(array[i] + " ");
         }
     }
+    public static void CheckValue(int number){
+        int[] array = {3,5,7,12,6,8,34,876,12};
+        boolean check = false;
+        for (int i:array){
+            if (i == number){
+                System.out.println("Число входить в масив");
+                check = true;
+            }
+        }
+        if (!check){
+            System.out.println("Число не входить в масив");
+        }
+    }
 }
+
+
