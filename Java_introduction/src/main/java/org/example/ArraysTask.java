@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class ArraysTask {
     public static void main(String[] args) {
-//        MiddleValue();
-//        Sorting();
+        MiddleValue();
+        Sorting();
         ReverseArray();
     }
     public static void MiddleValue() {
