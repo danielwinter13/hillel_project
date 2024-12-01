@@ -8,9 +8,12 @@ public class stringTask {
 //        xyzMiddle("AAxyzBB");
 //        xyzMiddle("AxyzBB");
 //        xyzMiddle("AxyzBBB");
-        zipZap("zipXzap");
-        zipZap("zopzop");
-        zipZap("zzzopzop");
+//        zipZap("zipXzap");
+//        zipZap("zopzop");
+////        zipZap("zzzopzop");
+//        xyzThere("abcxyz");
+//        xyzThere("abc.xyz");
+        xyzThere("x.xyz");
     }
 
     public static void repeatEnd(int number, String word) {
@@ -58,5 +61,13 @@ public class stringTask {
         String result;
         result = string2.replaceAll("z.p","zp");
         System.out.println(result);
+    }
+    public static void xyzThere(String containsXYZ) {
+        int indexOfX = containsXYZ.indexOf("x");
+        int isThereDot = containsXYZ.indexOf(".");
+        int indexResult = indexOfX - isThereDot;
+        if (containsXYZ.contains("xyz") && !(indexResult == 1)){
+            System.out.println(true);
+        }else System.out.println(false);
     }
 }
