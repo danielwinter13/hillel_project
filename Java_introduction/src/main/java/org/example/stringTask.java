@@ -1,12 +1,16 @@
 package org.example;
+import java.util.regex.*;
 
 public class stringTask {
     public static void main(String[] args) {
-        repeatEnd(3, "testasdasd");
-        mixString("asdasdzxcasd1qw23123123", "xcvcxvop");
-        xyzMiddle("AAxyzBB");
-        xyzMiddle("AxyzBB");
-        xyzMiddle("AxyzBBB");
+//        repeatEnd(3, "testasdasd");
+//        mixString("asdasdzxcasd1qw23123123", "xcvcxvop");
+//        xyzMiddle("AAxyzBB");
+//        xyzMiddle("AxyzBB");
+//        xyzMiddle("AxyzBBB");
+        zipZap("zipXzap");
+        zipZap("zopzop");
+        zipZap("zzzopzop");
     }
 
     public static void repeatEnd(int number, String word) {
@@ -49,5 +53,10 @@ public class stringTask {
         else {
             System.out.println("false");
         }
+    }
+    public static void zipZap(String string2) {
+        String result;
+        result = string2.replaceAll("z.p","zp");
+        System.out.println(result);
     }
 }
