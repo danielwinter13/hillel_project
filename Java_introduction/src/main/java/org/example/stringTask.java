@@ -3,17 +3,17 @@ import java.util.regex.*;
 
 public class stringTask {
     public static void main(String[] args) {
-//        repeatEnd(3, "testasdasd");
-//        mixString("asdasdzxcasd1qw23123123", "xcvcxvop");
-//        xyzMiddle("AAxyzBB");
-//        xyzMiddle("AxyzBB");
-//        xyzMiddle("AxyzBBB");
-//        zipZap("zipXzap");
-//        zipZap("zopzop");
-////        zipZap("zzzopzop");
-//        xyzThere("abcxyz");
-//        xyzThere("abc.xyz");
-        xyzThere("x.xyz");
+        repeatEnd(3, "testasdasd");
+        mixString("asdasdzxcasd1qw23123123", "xcvcxvop");
+        xyzMiddle("AAxyzBB");
+        xyzMiddle("AxyzBB");
+        xyzMiddle("AxyzBBB");
+        zipZap("zipXzap");
+        zipZap("zopzop");
+//        zipZap("zzzopzop");
+        xyzThere("abcxyz");
+        xyzThere("abc.xyz");
+        xyzThere("xyz.abc");
     }
 
     public static void repeatEnd(int number, String word) {
