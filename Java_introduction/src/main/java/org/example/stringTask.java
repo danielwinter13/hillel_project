@@ -4,6 +4,9 @@ public class stringTask {
     public static void main(String[] args) {
         repeatEnd(3, "testasdasd");
         mixString("asdasdzxcasd1qw23123123", "xcvcxvop");
+        xyzMiddle("AAxyzBB");
+        xyzMiddle("AxyzBB");
+        xyzMiddle("AxyzBBB");
     }
 
     public static void repeatEnd(int number, String word) {
@@ -29,6 +32,22 @@ public class stringTask {
         }else {
             resultPhrase.append(phrase2.substring(stringLenght));
         }
-        System.out.println(resultPhrase);
+        System.out.println("\n" + resultPhrase);
+    }
+    public static void xyzMiddle(String string1) {
+        int firstCharResult = Math.abs(-string1.indexOf('x'));
+        int lastCharResult = (string1.length()-1) - string1.indexOf('z');
+        int result = firstCharResult - lastCharResult;
+        if (string1.contains("xyz")){
+            if (result > 1 || result < -1){
+                System.out.println("false");
+            }
+            else {
+                System.out.println("true");
+            }
+            }
+        else {
+            System.out.println("false");
+        }
     }
 }
