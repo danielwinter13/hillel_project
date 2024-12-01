@@ -3,12 +3,32 @@ package org.example;
 public class stringTask {
     public static void main(String[] args) {
         repeatEnd(3, "testasdasd");
+        mixString("asdasdzxcasd1qw23123123", "xcvcxvop");
     }
-    public static void repeatEnd(int number,String word){
+
+    public static void repeatEnd(int number, String word) {
         String result;
-        for (int i = 0; i <= number; i++){
+        for (int i = 0; i <= number; i++) {
             result = word.substring(number);
             System.out.print(result);
         }
+    }
+
+    public static void mixString(String phrase1, String phrase2) {
+        StringBuffer resultPhrase = new StringBuffer();
+        char neededChar;
+        int stringLenght = Math.min(phrase1.length(),phrase2.length());
+        for (int i = 0; i < stringLenght; i++) {
+            neededChar = phrase1.charAt(i);
+            resultPhrase.append(neededChar);
+            neededChar = phrase2.charAt(i);
+            resultPhrase.append(neededChar);
+        }
+        if (phrase1.length()>stringLenght) {
+            resultPhrase.append(phrase1.substring(stringLenght));
+        }else {
+            resultPhrase.append(phrase2.substring(stringLenght));
+        }
+        System.out.println(resultPhrase);
     }
 }
