@@ -3,23 +3,24 @@ import java.util.regex.*;
 
 public class stringTask {
     public static void main(String[] args) {
-        repeatEnd(3, "testasdasd");
+        repeatEnd(3, "Hello");
+        repeatEnd(2, "Hello");
+        repeatEnd(1, "Hello");
         mixString("asdasdzxcasd1qw23123123", "xcvcxvop");
         xyzMiddle("AAxyzBB");
         xyzMiddle("AxyzBB");
         xyzMiddle("AxyzBBB");
         zipZap("zipXzap");
         zipZap("zopzop");
-//        zipZap("zzzopzop");
+        zipZap("zzzopzop");
         xyzThere("abcxyz");
         xyzThere("abc.xyz");
         xyzThere("xyz.abc");
     }
 
     public static void repeatEnd(int number, String word) {
-        String result;
-        for (int i = 0; i <= number; i++) {
-            result = word.substring(number);
+        String result = word.substring(word.length() - number);
+        for (int i = 0; i < number; i++) {
             System.out.print(result);
         }
     }
