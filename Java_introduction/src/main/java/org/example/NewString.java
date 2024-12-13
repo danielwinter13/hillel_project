@@ -41,18 +41,18 @@ public class NewString {
 
     }
 
-//    public static boolean catDog(String string_task1) {
+//    public static boolean catDog(String stringTask1) {
 //        int catCount = 0;
 //        int dogCount = 0;
-//        int index = string_task1.indexOf("cat");
+//        int index = stringTask1.indexOf("cat");
 //        while (index != -1) {
 //            catCount++;
-//            index = string_task1.indexOf("cat", index + 1);
+//            index = stringTask1.indexOf("cat", index + 1);
 //        }
-//        index = string_task1.indexOf("dog");
+//        index = stringTask1.indexOf("dog");
 //        while (index != -1) {
 //            dogCount++;
-//            index = string_task1.indexOf("dog", index + 1);
+//            index = stringTask1.indexOf("dog", index + 1);
 //        }
 //        if (dogCount == catCount) {
 //            return true;
