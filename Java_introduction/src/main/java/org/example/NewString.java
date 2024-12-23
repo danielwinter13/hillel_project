@@ -1,5 +1,6 @@
 package org.example;
 import java.util.Arrays;
+import java.util.SimpleTimeZone;
 
 public class NewString {
     public static void main(String[] args) {
@@ -47,6 +48,9 @@ public class NewString {
         System.out.println(countCode("aaacodebbb"));
         System.out.println(countCode("codexxcode"));
         System.out.println(countCode("cozexxcope"));
+        System.out.println(endsWith("AbC", "HiaBc"));
+        System.out.println(endsWith("abc", "abXabc"));
+        System.out.println(endsWith("Hiabc", "abc"));
     }
 
         public static boolean catDog(String stringTask1) {
@@ -140,5 +144,12 @@ public class NewString {
             }
         }
         return result;
+    }
+    public static boolean endsWith(String firstString, String secondString) {
+        if(firstString.substring(firstString.length() - 3).equalsIgnoreCase(secondString.substring(secondString.length() - 3))){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
