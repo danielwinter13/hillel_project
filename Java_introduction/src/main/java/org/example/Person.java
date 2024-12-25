@@ -1,16 +1,15 @@
 package org.example;
 
-import jdk.jshell.spi.SPIResolutionException;
-
-public class Person {
+public class Person{
     private int age;
     private String name;
-    private String profession;
+    private PersonRole personRole;
 
-    public Person(int age, String name, String profession){
+
+    public Person(int age, String name, String personRole){
         this.age = age;
         this.name = name;
-        this.profession = profession;
+        this.personRole = PersonRole.valueOf(personRole.toUpperCase());
     }
 
     public void setAge(int newAge){
@@ -20,7 +19,7 @@ public class Person {
         name = newName;
     }
     public void setProfession(String newProfession){
-        profession = newProfession;
+        personRole = PersonRole.valueOf(newProfession.toUpperCase());
     }
     public int getAge(){
         return age;
@@ -28,7 +27,12 @@ public class Person {
     public String getName(){
         return name;
     }
-    public String gerProfession(){
-        return profession;
+    public String getProfession(){
+        return personRole.name();
     }
+
+
+
 }
+
+
