@@ -1,10 +1,9 @@
 package org.example;
 
-public class Person{
-    private int age;
-    private String name;
+public abstract class Person implements Displayable{
+    private static int age;
+    public String name;
     private PersonRole personRole;
-
 
     public Person(int age, String name, String personRole){
         this.age = age;
@@ -14,7 +13,7 @@ public class Person{
 
     public void setAge(int newAge){
         age = newAge;
-    }
+    };
     public void setName(String newName){
         name = newName;
     }
@@ -24,14 +23,14 @@ public class Person{
     public int getAge(){
         return age;
     }
-    public String getName(){
-        return name;
-    }
+    public abstract String getName();
     public String getProfession(){
         return personRole.name();
     }
-
-
+    @Override
+    public void displayInformation(){
+        System.out.print("Name: " + getName() + ", Age: " + getAge() + ", Profession:" + getProfession());
+    }
 
 }
 
