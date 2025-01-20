@@ -2,76 +2,81 @@
 package org.example;
 
 
-public class Main {
-    public static void main(String[] args) {
-        System.out.println(isPrime(0));
-        System.out.println(isPrime(8));
-        System.out.println(isPrime(7));
-        System.out.println(checkAge(18));
-        System.out.println(checkAge(0));
-        System.out.println(checkAge(99));
-        System.out.println(isPerfectSquare(25));
-        System.out.println(isPerfectSquare(20));
-        System.out.println(isPerfectSquare(9));
-        System.out.println(calculateSumUpToN(1));
-        System.out.println(calculateSumUpToN(3));
-        System.out.println(calculateSumUpToN(0));
-        System.out.println(getGrade(5));
-        System.out.println(getGrade(1));
-        System.out.println(getGrade(-3));
-    }
+import java.util.HashMap;
+import java.util.Map;
 
-    public static boolean isPrime(int A) {
-        int check = 0;
-        if (A <= 1){
-            return false;
+public class Main {
+    public static void main(String[] args){
+        String[] arraytask1_1 = {"a", "bb", "a", "bb"};
+        System.out.println(getLengthOfStrings(arraytask1_1));
+        String[] arraytask1_2 = {"this", "and", "that", "and"};
+        System.out.println(getLengthOfStrings(arraytask1_2));
+        String[] arraytask1_3 = {"code", "code", "code", "bug"};
+        System.out.println(getLengthOfStrings(arraytask1_3));
+        String[] arraytask2_1 = {"code", "bug"};
+        System.out.println(createMap(arraytask2_1));
+        String[] arraytask2_2 = {"man", "moon", "main"};
+        System.out.println(createMap(arraytask2_2));
+        String[] arraytask2_3 = {"man", "moon", "good", "night"};
+        System.out.println(createMap(arraytask2_3));
+        String[] arraytask3_1 = {"a", "b", "a", "c", "b"};
+        System.out.println(countWords(arraytask3_1));
+        String[] arraytask3_2 = {"c", "b", "a"};
+        System.out.println(countWords(arraytask3_2));
+        String[] arraytask3_3 = {"c", "c", "c", "c"};
+        System.out.println(countWords(arraytask3_3));
+        System.out.println(mergeStringsByFirstChar(new String[]{"salt", "tea", "soda", "toast"}));
+        System.out.println(mergeStringsByFirstChar(new String[]{"aa", "bb", "cc", "aAA", "cCC", "d"}));
+        System.out.println(mergeStringsByFirstChar(new String[]{}));
+        System.out.println(buildResultString(new String[]{"a", "b", "a"}));
+        System.out.println(buildResultString(new String[]{"a", "b", "a", "c", "a", "d", "a"}));
+        System.out.println(buildResultString(new String[]{"a", "", "a"}));
+
+    }
+    public static Map<String, Integer> getLengthOfStrings(String[] array){
+        Map<String, Integer> stringMap = new HashMap<>();
+        for (int i=0; i < array.length; i++){
+            stringMap.put(array[i],array[i].length());
         }
-        for (int i = 2; i <= Math.sqrt(A); i++){
-            if(A % i == 0){
-                return false;
+        return stringMap;
+    }
+    public static Map<String, String> createMap(String[] array){
+        Map<String, String> stringMap = new HashMap<>();
+        for (int i = 0; i < array.length; i++) {
+            stringMap.put(String.valueOf(array[i].charAt(0)), String.valueOf(array[i].charAt(array[i].length() - 1)));
+        }
+        return stringMap;
+    }
+    public static Map<String, Integer> countWords(String[] array){
+        HashMap<String, Integer> frequencyMap = new HashMap<>();
+        for (String word : array) {
+            frequencyMap.put(word, frequencyMap.getOrDefault(word, 0) + 1);
+        }
+        return frequencyMap;
+    }
+    public static Map<String, String> mergeStringsByFirstChar(String[] strings){
+        Map<String, String> result = new HashMap<>();
+        for (String str : strings) {
+            if (str.isEmpty()) {
+                continue;
             }
+            String firstChar = String.valueOf(str.charAt(0));
+            result.put(firstChar, result.getOrDefault(firstChar, "") + str);
         }
-        return true;
+
+        return result;
     }
-    public static String checkAge(int a) {
-        if ( a >= 18){
-            return "Ви є дорослою людиною";
-        }else {
-            return "Ви не є дорослою людиною";
+    public static String buildResultString(String[] strings){
+        String doubledChar = "";
+        HashMap<String, Integer> frequencyMap = new HashMap<>();
+        for (String word : strings) {
+            frequencyMap.put(word, frequencyMap.getOrDefault(word, 0) + 1);
         }
-    }
-    public static boolean isPerfectSquare(int a) {
-        if(Math.sqrt(a) % 1 == 0){
-            return true;
-        }else {
-            return false;
-        }
-    }
-    public static String calculateSumUpToN(int N) {
-        if (N > 0) {
-            int sum = 0;
-            for (int i = 0; i <= N; i++){
-                sum += i;
+        for (String i : frequencyMap.keySet()) {
+            if (frequencyMap.get(i) % 2 == 0){
+                doubledChar = i;
+                break;
             }
-        return "" + sum;
-    } else {
-        return "Хибні вхідні параметри";
-    }
-}
-    public static String getGrade(int A) {
-        switch (A) {
-            case 1:
-                return "Погано";
-            case 2:
-                return "Не дуже добре";
-            case 3:
-                return "Посередньо";
-            case 4:
-                return "Не погано";
-            case 5:
-                return "Відмінно";
-            default:
-                return "Неправильна оцінка";
-        }
+        }return doubledChar;
     }
 }
