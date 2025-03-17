@@ -1,9 +1,11 @@
 package org.example;
 
+import CustomException.CustomException;
+
 public class Men extends Person{
     public static final String gender = "men";
     private String additionalInfo;
-    public  Men(int age, String name, String profession) {
+    public  Men(int age, String name, String profession) throws CustomException {
         super(age, name, profession);
     }
     @Override
